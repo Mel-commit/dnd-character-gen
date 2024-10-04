@@ -1,1 +1,37 @@
+import tkinter as tk
+import random
+
+# List of D&D character races
+character_races = [
+    "Human",
+    "Elf",
+    "Dwarf",
+    "Halfling",
+    "Dragonborn",
+    "Gnome",
+    "Half-Elf",
+    "Half-Orc",
+    "Tiefling",
+    "Aasimar"
+]
+
+def generate_race():
+    """Generate a random D&D character race."""
+    random_race = random.choice(character_races)
+    result_label.config(text=f"Your character race is: {random_race}")
+
+# Create the main application window
+root = tk.Tk()
+root.title("Random D&D Character Race Generator")
+
+# Create a button that generates a race
+generate_button = tk.Button(root, text="Generate Random Race", command=generate_race)
+generate_button.pack(pady=20)
+
+# Label to display the result
+result_label = tk.Label(root, text="", font=("Helvetica", 16))
+result_label.pack(pady=20)
+
+# Run the application
+root.mainloop()
 
